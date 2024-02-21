@@ -9,6 +9,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh "mvn --version"
+                sh "java --version"
+                sh "git version"
                 echo 'Building..'
                 echo "$PATH"
                 echo "$env.BUILD_NUMBER"
