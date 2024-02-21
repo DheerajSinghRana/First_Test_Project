@@ -4,7 +4,7 @@ pipeline {
         mavenhome = tool 'mymaven'
         javahome = tool 'jdk17'
         githome = tool 'mygit'
-        PATH = $mavenhome/bin:$javahome/bin:$githome/bin:$PATH
+        PATH = "$mavenhome/bin:$javahome/bin:$githome/bin:$PATH"
     }
     stages {
         stage('Build') {
