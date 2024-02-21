@@ -24,7 +24,7 @@ pipeline {
         }
         success {
             echo "success"
-            mail bcc: '', body: '', cc: 'dharworld17@gmail.com', from: '', replyTo: '', subject: 'build successful', to: 'dheerajsinghrana0914@gmail.com'
+            mail bcc: 'dharworld17@gmail.com', body: 'build is successful', cc: 'dharworld17@gmail.com', from: '', replyTo: '', subject: 'build successful', to: 'dheerajsinghrana0914@gmail.com'
         }
         failure {
             echo "fail"
