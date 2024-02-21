@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                
             }
         }
         stage('Test') {
@@ -23,6 +24,7 @@ pipeline {
         }
         success {
             echo "success"
+            mail bcc: '', body: '', cc: 'dharworld17@gmail.com', from: '', replyTo: '', subject: 'build successful', to: 'dheerajsinghrana0914@gmail.com'
         }
         failure {
             echo "fail"
