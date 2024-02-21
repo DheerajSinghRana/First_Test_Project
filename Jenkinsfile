@@ -4,7 +4,8 @@ pipeline {
         mavenhome = tool 'mymaven'
         javahome = tool 'jdk17'
         githome = tool 'mygit'
-        PATH = "$mavenhome/bin:$javahome/bin:$githome/bin:$PATH"
+        dockerhome = tool 'mydocker'
+        PATH = "$mavenhome/bin:$javahome/bin:$githome/bin:$dockerhome/bin:$PATH"
     }
     stages {
         stage('Checkout') {
@@ -28,9 +29,12 @@ pipeline {
                 echo 'testing'
             }
         }
-        stage('Deploy') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Deploying....'
+                script {
+                   dockerimage = docker.build("83497/jdkimage:${env.BUILD_TAG}")
+                }
+                
             }
         }
     }
