@@ -20,12 +20,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'mvn clean compile'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                echo 'mvn test'
+                echo 'testing'
             }
         }
         stage('Deploy') {
