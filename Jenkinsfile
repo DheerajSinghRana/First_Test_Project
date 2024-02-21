@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        mavenhome = tool 'mymaven'
+        javahome = tool 'jdk17'
+        githome = tool 'mygit'
+    }
     stages {
         stage('Build') {
             steps {
