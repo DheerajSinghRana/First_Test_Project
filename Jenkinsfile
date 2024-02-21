@@ -4,6 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo "$PATH"
+                echo "$env.BUILD_NUMBER"
                 
             }
         }
@@ -24,7 +26,6 @@ pipeline {
         }
         success {
             echo "success"
-            mail bcc: 'dharworld17@gmail.com', body: 'build is successful', cc: 'dharworld17@gmail.com', from: '', replyTo: '', subject: 'build successful', to: 'dheerajsinghrana0914@gmail.com'
         }
         failure {
             echo "fail"
