@@ -32,7 +32,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                   dockerimage = docker.build();
+                   dockerimage = docker.build("");
                 }
                 
             }
