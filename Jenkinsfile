@@ -32,7 +32,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                   dockerimage = docker.build("83497/jdkimage:${env.BUILD_TAG}")
+                   dockerimage = docker.build("83497/jdkimage:latest")
                 }
                 
             }
