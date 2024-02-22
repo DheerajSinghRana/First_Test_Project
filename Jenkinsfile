@@ -54,6 +54,7 @@ pipeline {
     post {
         always {
             echo "always"
+            emailext body: 'build is successful', subject: 'build success', to: 'dheerajsinghrana0914@gmail.com'
         }
         success {
             echo "success"
