@@ -31,24 +31,25 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                script {
-                   dockerimage = docker.build("83497/jdkimage:latest");
-                }
+                sh ‘docker build -t 83497/jdkimage:${BUILD_NUMBER} .’
+                // script {
+                //    dockerimage = docker.build("83497/jdkimage:latest");
+                // }
                 
             }
         }
-        stage('Push Docker Image') {
-            steps {
-                script{
-                    docker.withRegistry('', 'dockerhub') {
-                    dockerimage.push();
-                    dockerimage.push('latest');
-                }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         script{
+        //             docker.withRegistry('', 'dockerhub') {
+        //             dockerimage.push();
+        //             dockerimage.push('latest');
+        //         }
                    
-                }
+        //         }
                 
-            }
-        }
+        //     }
+        // }
     }
     post {
         always {
