@@ -33,7 +33,7 @@ pipeline {
             steps {
                 
                 script {
-                   dockerimage = docker.build("83497/jdkimage:latest");
+                   dockerimage = docker.build--no-cache("83497/jdkimage:latest");
                 }
                 
             }
