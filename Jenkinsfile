@@ -4,7 +4,7 @@ pipeline {
         mavenhome = tool 'mymaven'
         javahome = tool 'jdk17'
         githome = tool 'mygit'
-        dockerhome = tool 'mydocker'
+        dockerhome = tool 'docker'
         PATH = "$mavenhome/bin:$javahome/bin:$githome/bin:$dockerhome/bin:$PATH"
     }
     stages {
