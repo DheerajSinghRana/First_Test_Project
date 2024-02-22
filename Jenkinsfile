@@ -29,27 +29,27 @@ pipeline {
                 echo 'testing'
             }
         }
-        stage('Build Docker Image') {
-            steps {
+        // stage('Build Docker Image') {
+        //     steps {
                 
-                script {
-                   dockerimage = docker.build("83497/jdkimage:latest");
-                }
+        //         script {
+        //            dockerimage = docker.build("83497/jdkimage:latest");
+        //         }
                 
-            }
-        }
-        stage('Push Docker Image') {
-            steps {
-                script{
-                    docker.withRegistry('', 'dockerhub') {
-                    dockerimage.push();
-                    dockerimage.push('latest');
-                }
+        //     }
+        // }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         script{
+        //             docker.withRegistry('', 'dockerhub') {
+        //             dockerimage.push();
+        //             dockerimage.push('latest');
+        //         }
                    
-                }
+        //         }
                 
-            }
-        }
+        //     }
+        // }
     }
     post {
         always {
